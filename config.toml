@@ -1,0 +1,6 @@
+stitle = "MDFriday Themes"
+
+[module]
+[[module.imports]]
+path = "github.com/mdfriday/theme-long-teng"
+

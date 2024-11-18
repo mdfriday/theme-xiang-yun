@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="themes">
+    <main class="main-wrapper content-with-sidebar min-vh-100 pb7 pb0-ns">
+        <link href="/css/themes.css" rel="stylesheet" type="text/css">
+        <div class="transparent-navbar_spacer"></div>
+
+        <article class="cf pv3 pv5-ns ph0 ph4-l">
+
+            <div class="flex-l items-center pa4 pa0-l w-100">
+                <h1 class="primary-color-dark f2">
+                    MDFriday Themes
+                </h1>
+                <div class="flex-auto-l"></div>
+                <div class="flex flex-wrap justify-between">
+                    <span class="gray dib-l f6 ph3 pv2 gray dn">Prev/Next: </span>
+                    {{ partial "previous-next-links.html" . }}
+                    <a href="/" class="bg-primary-color br2 dib-l f6 hover-bg-accent-color link ph3 pv2 white ml5-l">
+                        All Themes
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-l bg-light-gray">
+                <div class="w-100 w-50-l pa4">
+                    <div>
+                        {{ partial "theme-details" . }}
+                    </div>
+                    <div>
+                        {{ partial "theme-buttons" . }}
+                    </div>
+                </div>
+                <div class="w-100 w-50-l pa4">
+                    {{ $img := (.Resources.ByType "image").GetMatch "*screen*" }}
+                    {{ with $img }}
+                    {{ $big := .Fill "1500x1000 top" }}
+                    {{ $small := .Fill "750x500 top" }}
+                    <img srcset="{{ $small.RelPermalink }} 1x, {{ $big.RelPermalink }} 2x" alt="{{ $.Title }}"
+                         width="{{ $small.Width }}" class="fit shadow-2"/>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="w-100 w-80-l pv5 ph4 ph5-ns center nested-links overflow-hidden ">
+                {{ .Content }}
+                {{ partial "related.html" . }}
+            </div>
+
+        </article>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+</div>
+{{ end }}
