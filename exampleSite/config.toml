@@ -9,46 +9,6 @@ path = "github.com/mdfriday/theme-xiang-yun"
 [markup.goldmark.renderer]
   unsafe = true
 
-[blackfriday]
-  plainIdAnchors = true
-  config         = "config-tpl-base.toml"
-
-[outputs]
-  home = ["HTML", "RSS", "REDIR", "HEADERS"]
-
-[mediaTypes]
-  [mediaTypes."text/netlify"]
-    suffixes  = [""]
-    delimiter = ""
-
-[outputFormats]
-  [outputFormats.REDIR]
-    mediatype      = "text/netlify"
-    baseName       = "_redirects"
-    isPlainText    = true
-    notAlternative = true
-  [outputFormats.HEADERS]
-    mediatype      = "text/netlify"
-    baseName       = "_headers"
-    isPlainText    = true
-    notAlternative = true
-
-[related]
-  threshold    = 80
-  includeNewer = true
-  toLower      = false
-
-  [[related.indices]]
-    name   = "tags"
-    weight = 100
-  [[related.indices]]
-    name    = "date"
-    weight  = 10
-    pattern = "2006"
-
-[social]
-  twitter = "GoHugoIO"
-
 [caches]
   [caches.images]
     dir = ":cacheDir"
