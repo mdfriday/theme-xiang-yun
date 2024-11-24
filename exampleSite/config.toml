@@ -1,4 +1,4 @@
-baseurl         = "/"
+baseurl         = "/preview/"
 languageCode    = "en-us"
 title           = "MDFriday Themes"
 

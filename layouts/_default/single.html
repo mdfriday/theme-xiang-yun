@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="themes">
     <main class="main-wrapper content-with-sidebar min-vh-100 pb7 pb0-ns">
-        <link href="{{  "css/themes.css" | relURL }}" rel="stylesheet" type="text/css">
+        <link href="{{  "css/themes.css" | absURL }}" rel="stylesheet" type="text/css">
         <div class="transparent-navbar_spacer"></div>
 
         <article class="cf pv3 pv5-ns ph0 ph4-l">
@@ -32,7 +32,7 @@
                     {{ with $img }}
                     {{ $big := .Fill "1500x1000 top" }}
                     {{ $small := .Fill "750x500 top" }}
-                    <img srcset="{{ $small.RelPermalink }} 1x, {{ $big.RelPermalink }} 2x" alt="{{ $.Title }}"
+                    <img srcset="{{ $small.RelPermalink | absURL }} 1x, {{ $big.RelPermalink | absURL }} 2x" alt="{{ $.Title }}"
                          width="{{ $small.Width }}" class="fit shadow-2"/>
                     {{ end }}
                 </div>
@@ -40,7 +40,6 @@
 
             <div class="w-100 w-80-l pv5 ph4 ph5-ns center nested-links overflow-hidden ">
                 {{ .Content }}
-                {{ partial "related.html" . }}
             </div>
 
         </article>
