@@ -1,4 +1,4 @@
-baseurl         = "/preview/"
+baseurl         = "/"
 languageCode    = "en-us"
 title           = "MDFriday Themes"
 
@@ -24,11 +24,4 @@ path = "github.com/mdfriday/theme-xiang-yun"
   anchor = "smart"
 
 [params]
-  github_repo = "https://github.com/gohugoio/hugoThemesSiteBuilder"
-  gitter      = "https://gitter.im/spf13/hugo"
-  forum       = "https://discourse.gohugo.io/"
-  #This array is meant for disabling the Homepage button of a theme.
-  noHomePage = ["hugo-theme-novela"]
-
-  # GLOBAL = IF ANYTHING CHANGES BELOW UPDATE MAIN, DOCS, THEMES
-
+  github_repo = "https://github.com/mdfriday/theme-xiang-yun"

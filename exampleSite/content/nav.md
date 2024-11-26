@@ -3,7 +3,7 @@ title: "导航栏配置"
 logo_link: "https://mdfriday.com/"
 logo_image: "img/mdfriday.svg"
 left_links:
-  - "Themes, /themes, false"
+  - "Themes, https://themes.mdfriday.com, true"
   - "Pricing, /pricing, false"
 right_links:
   - "Contact Us, mailto:service@mdfriday.com"

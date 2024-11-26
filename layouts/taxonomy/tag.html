@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="themes">
+  <main class="main-wrapper content-with-sidebar min-vh-100 pb7 pb0-ns">
+    <link href="{{ "css/themes.css" | absURL }}" rel="stylesheet" type="text/css">
+
+    <div class="background-image-container">
+      <img src="{{ "img/banner-bg.svg" | absURL }}" loading="eager" alt="" class="background-cover-image">
+    </div>
+
+    <div class="transparent-navbar_spacer"></div>
+
+  {{ $section_to_display := .Data.Pages.ByLastmod.Reverse }}
+  {{ partial "pagelayout.html" (dict "context" . "section_to_display" $section_to_display)  }}
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+</div>
+{{ end }}
